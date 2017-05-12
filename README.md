@@ -1,11 +1,11 @@
-angular-multi-select-tree
+angular-multiselect-searchtree
 =============================
 
 A native Angular multi select tree. No JQuery.
-![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)
-#### Demo Page:
+Original: https://github.com/kjvelarde/angular-multiselectsearchtree
 
-[Demo] (http://htmlpreview.github.io/?https://github.com/kjvelarde/angular-multiselectsearchtree/blob/master/demo/index.html)
+#### Demo Page:
+http://htmlpreview.github.io/?https://github.com/mtrawin/angular-multiselect-searchtree/blob/master/demo/index.html
 
 #### Features:
 Very Easy to Use:
@@ -17,31 +17,34 @@ Very Easy to Use:
 - Select one only or Multiselect
 - NO JQuery
 
-#### Design details: 
+#### Design details:
 Custom element using Angular Directive and Templating
 
-#### Callbacks: 
+#### Callbacks:
 This is your onchange :)
+e.g.
+
+```html
+data-callback="CustomCallback(item, selectedItems)"
+```
 
 ##### Usage:
-Get this awesome component to your project by:
+Bower installation:
 
 ```sh
-bower install kjvelarde-angular-multiselectsearchtree --save
-
-# bower install long name ehhfsaduasdu lol . just kidding use the first one :)
+bower install angular-multiselect-searchtree --save
 ```
 
 Make sure to load the scripts in your html.
 
 ```html
-<link rel="stylesheet" href="../dist/kjvelarde-multiselect-searchtree.min.css">
-<script type="text/javascript" src="../dist/angular-multi-select-tree.min.js"></script>
-<script type="text/javascript" src="../dist/angular-multi-select-tree.tpl.js"></script>
+<link rel="stylesheet" href="../dist/angular-multiselect-searchtree.min.css">
+<script type="text/javascript" src="../dist/angular-multiselect-searchtree.min.js"></script>
+<script type="text/javascript" src="../dist/angular-multiselect-searchtree.tpl.js"></script>
 
 ```
 
-And Inject the module as dependency to your angular app.
+And Inject the module as a dependency in your angular app.
 
 ```
 angular.module('[YOURAPPNAMEHERE!]', ['multiselect-searchtree', '....']);
@@ -52,14 +55,34 @@ angular.module('[YOURAPPNAMEHERE!]', ['multiselect-searchtree', '....']);
 ```html
 <multiselect-searchtree
     multi-select="true"
-    data-input-model="data" 
-    data-output-model="selectedItem2"
+    data-input-model="inputData"
+    data-output-model="outputData"
     data-callback="CustomCallback(item, selectedItems)"
     data-select-only-leafs="true">
-</multiselect-searchtree>											
+</multiselect-searchtree>
 ```
 
-That's what all you have to do.
+###### More options:
+
+Show Select All / Clear All buttons:
+```html
+extra-buttons="true"
+```
+
+Hide the search box:
+```html
+filter-type="hidden"
+```
+
+Disable the search box:
+```html
+filter-type="disable"
+```
+
+Change search behaviour to also hide children that do not match your search:
+```html
+direct-search="true"
+```
 
 ##### License
 
