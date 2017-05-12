@@ -7,11 +7,11 @@ angular.module('multiselect-searchtree').run(['$templateCache', function ($templ
       "        <div class=\"helper-container\">\n" +
       "            <div class=\"line\">\n" +
       "                 <div class=\"input-group\">" +
-      "                      <input placeholder=\"Search...\" type=\"text\" ng-model=\"filterKeyword\" ng-click=\"onFilterClicked($event)\"\n" +
+      "                      <input ng-hide=\"filterType === 'hidden'\" ng-disabled=\"filterType === 'disable'\" placeholder=\"Search...\" type=\"text\" ng-model=\"filterKeyword\" ng-click=\"onFilterClicked($event)\"\n" +
       "                       class=\"form-control\">\n" +
-      " <span class=\"clear-button\" ng-click=\"clearFilter($event)\" ng-style=\"clearSearchIconStyle\"><span class=\"item-close\"></span></span>\n" +
-      "                      <span class=\"input-group-addon\">" +
-      "                     <i class=\"glyphicon glyphicon-search\"  ng-click=\"clearFilter($event)\"></i>" +
+      " <span class=\"clear-button\" ng-hide=\"filterType === 'hidden' || filterType === 'disabled'\" ng-click=\"clearFilter($event)\" ng-style=\"clearSearchIconStyle\"><span class=\"item-close\"></span></span>\n" +
+      "                      <span ng-hide=\"filterType === 'hidden'\" ng-disabled=\"filterType === 'disable'\" class=\"input-group-addon\">" +
+      "                     <i class=\"glyphicon glyphicon-search\"></i>" +
       "                      </span>" +
      "                      <span class=\"input-group-addon\" ng-if=\"extraButtons\" style=\"cursor: pointer;\" ng-click=\"onSelectAll(inputModel,$event)\">" +
       "                     <i class=\"glyphicon glyphicon-ok\"></i> Select All" +
@@ -46,7 +46,7 @@ angular.module('multiselect-searchtree').run(['$templateCache', function ($templ
       "        </div>\n" +
       "    </div>\n" +
       "    <ul ng-repeat=\"child in item.children\" ng-if=\"item.isExpanded\">\n" +
-      "        <tree-item item=\"child\" item-selected=\"subItemSelected(item)\" use-callback=\"useCallback\"\n" +
+      "        <tree-item item=\"child\" item-selected=\"subItemSelected(item)\" ng-show=\"!child.isFiltered\" use-callback=\"useCallback\"\n" +
       "                   can-select-item=\"canSelectItem\" multi-select=\"multiSelect\"\n" +
       "                   on-active-item=\"activeSubItem(item, $event)\"></tree-item>\n" +
       "    </ul>\n" +

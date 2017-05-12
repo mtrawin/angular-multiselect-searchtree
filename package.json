@@ -1,28 +1,28 @@
 {
-  "name": "kjvelarde-angular-multiselectsearchtree",
+  "name": "angular-multiselect-searchtree",
   "version": "1.0",
   "description": "Amazing tree list component; bind ready with ability to search. Powered by AngularJS",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kjvelarde/angular-multiselectsearchtree"
+    "url": "https://github.com/mtrawin/angular-multiselect-searchtree"
   },
   "keywords": [
     "angular",
-	"angularjs",
-    "multiselect",    
-	"search",
-	"tree",
-	"bind",
-	"hierarchy",
-	"tree"
+	  "angularjs",
+    "multiselect",
+	  "search",
+	  "tree",
+	  "bind",
+	  "hierarchy",
+	  "tree"
   ],
-  "author": "Karl James Velarde",
+  "author": "Matt Trawin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kjvelarde/angular-multiselectsearchtree/issues"
+    "url": "https://github.com/mtrawin/angular-multiselect-searchtree/issues"
   },
-  "homepage": "https://github.com/kjvelarde",
+  "homepage": "https://github.com/mtrawin",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-watch": "~0.5.3",

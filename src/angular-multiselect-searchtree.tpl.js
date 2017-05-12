@@ -7,10 +7,10 @@ angular.module('multiselect-searchtree').run(['$templateCache', function ($templ
       "        <div class=\"helper-container\">\n" +
       "            <div class=\"line\">\n" +
       "                 <div class=\"input-group\">" +
-      "                      <input placeholder=\"Search...\" type=\"text\" ng-model=\"filterKeyword\" ng-click=\"onFilterClicked($event)\"\n" +
+      "                      <input ng-hide=\"filterType === 'hidden'\" ng-disabled=\"filterType === 'disable'\" placeholder=\"Search...\" type=\"text\" ng-model=\"filterKeyword\" ng-click=\"onFilterClicked($event)\"\n" +
       "                       class=\"form-control\">\n" +
       " <span class=\"clear-button\" ng-click=\"clearFilter($event)\" ng-style=\"clearSearchIconStyle\"><span class=\"item-close\"></span></span>\n" +
-      "                      <span class=\"input-group-addon\">" +
+      "                      <span ng-hide=\"filterType === 'hidden'\" ng-disabled=\"filterType === 'disable'\" class=\"input-group-addon\">" +
       "                     <i class=\"glyphicon glyphicon-search\"></i>" +
       "                      </span>" +
      "                      <span class=\"input-group-addon\" ng-if=\"extraButtons\" style=\"cursor: pointer;\" ng-click=\"onSelectAll(inputModel,$event)\">" +
